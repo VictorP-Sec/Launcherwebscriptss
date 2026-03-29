@@ -42,7 +42,7 @@ interface RepoDetails {
 
 // WARNING: Hardcoding a GitHub token is a security risk. 
 // This token is exposed to anyone who visits the site.
-const HARDCODED_GITHUB_TOKEN = "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";
+const HARDCODED_GITHUB_TOKEN = "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";
 
 export default function App() {
   const [username, setUsername] = useState('VictorP-Sec');
