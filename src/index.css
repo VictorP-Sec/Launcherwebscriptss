@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #a9ffdf;
+  --color-surface: #0A0A0A;
+  --color-gh-blue: #0969da;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-white font-sans selection:bg-primary/30 transition-colors duration-300;
+  }
+
+  .light body {
+    @apply bg-[#f6f8fa] text-[#1f2328];
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.4);
+}
+
+/* GitHub Markdown overrides */
+.markdown-body {
+  font-family: inherit !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  background-color: transparent !important;
+}
+
+.light .markdown-body {
+  color: #1f2328 !important;
+}
+
+.dark .markdown-body {
+  color: #e6edf3 !important;
+}
+
+.markdown-body pre {
+  background-color: rgba(128, 128, 128, 0.05) !important;
+  border: 1px solid rgba(128, 128, 128, 0.1) !important;
+}
+
+.markdown-body code {
+  background-color: rgba(128, 128, 128, 0.1) !important;
+}
+
+/* Ensure header icons are white regardless of theme since header is always dark */
+header .lucide {
+  color: white !important;
+}
+
+header input::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .repo-card-header {
+    @apply flex-col items-start gap-4;
+  }
+  
+  .repo-actions {
+    @apply w-full flex-col;
+  }
+  
+  .repo-actions button {
+    @apply w-full justify-center py-3;
+  }
+}
+
+/* Extra small devices */
+@container (max-width: 400px) {
+  .header-title {
+    display: none;
+  }
+}

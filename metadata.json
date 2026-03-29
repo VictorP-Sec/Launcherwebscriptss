@@ -1,0 +1,5 @@
+{
+  "name": "Web Repository Analyzer",
+  "description": "An automated system to scan GitHub repositories for HTML content, resolve deployment URLs, and display README documentation alongside live previews.",
+  "requestFramePermissions": []
+}
